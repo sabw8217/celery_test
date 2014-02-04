@@ -12,7 +12,8 @@ To run:
 """
 from celery import Celery
 
-app = Celery('tasks', broker='amqp://localhost:5672/')
+app = Celery('tasks', broker='pyamqp://localhost:5672/')
+app.conf.CELERY_IGNORE_RESULT = True
 
 @app.task
 def add(x, y):
