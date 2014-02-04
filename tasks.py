@@ -7,7 +7,7 @@ To run:
 > import tasks
 > tasks.enqueue_tasks()
 
-- run `celery -A tasks --without-gossip --without-mingle -Q celery_test`
+- run `celery -A tasks worker --without-gossip --without-mingle -Q celery_test`
 
 """
 from celery import Celery
